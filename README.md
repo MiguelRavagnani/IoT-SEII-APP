@@ -1,4 +1,4 @@
 # IoT-SEII-APP
-Django REST API for a simple IoT application. 
+React frontend for a simple IoT application. 
 
 TODO: Description

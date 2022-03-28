@@ -23,7 +23,7 @@ class App extends Component {
   }
   refreshList = () => {
     axios
-      .get("http://localhost:8000/api/devices/")
+      .get("https://sei-ii-app.herokuapp.com/api/devices/")
       .then(res => this.setState({ deviceList: res.data }))
       .catch(err => console.log(err));
   };
@@ -94,17 +94,17 @@ class App extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`http://localhost:8000/api/devices/${item.id}/`, item)
+        .put(`https://sei-ii-app.herokuapp.com/api/devices/${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("http://localhost:8000/api/devices/", item)
+      .post("https://sei-ii-app.herokuapp.com/api/devices/", item)
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`http://localhost:8000/api/devices/${item.id}`)
+      .delete(`https://sei-ii-app.herokuapp.com/api/devices/${item.id}`)
       .then(res => this.refreshList());
   };
   createItem = () => {
